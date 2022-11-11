@@ -15,11 +15,13 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #ecf0f1;
+    /* background-color: #ecf0f1; */
+    background-color: #222831;
 }
 
 .content {
     background-color: #fff;
+    /* background-color: #2B2E4A; */
     border-radius: 15px;
     width: 960px;
     height: 65%;
@@ -31,7 +33,8 @@ body {
 .content::before {
     content: "";
     position: absolute;
-    background-color: #58af9b;
+    /* background-color: #58af9b; */
+    background-color: #393E46;
     width: 40%;
     height: 100%;
     border-top-left-radius: 15px;
@@ -96,7 +99,7 @@ body {
     text-transform: uppercase;
     color: #fff;
     font-size: 8px;
-    padding: 8px 60px;
+    padding: 8px 6px;
     cursor: pointer;
     font-weight: bold;
     width: 150px;
@@ -114,6 +117,7 @@ body {
 .btn-primary:hover {
     background-color: #fff;
     color: #58af9b;
+    transition: background-color 0.5s;
 }
 
 .btn-second {
@@ -133,7 +137,7 @@ body {
 }
 
 .link-social-media .item-social-media {
-    transition: background-color 0.5s;
+    transition: background-color 1.2s;
 }
 
 .link-social-media:hover .item-social-media {
@@ -172,6 +176,7 @@ body {
     border: none;
     background-color: #ecf0f1;
     width: 100%;
+    outline: none;
 }
 
 .label-input {
@@ -219,9 +224,12 @@ body {
     z-index: -1;
 }
 
-.entrar-js .second-content .first-column,
 .entrar-js .second-content .second-column {
     z-index: 12;
+}
+
+.entrar-js .second-content .first-column {
+    z-index: 14;
 }
 
 .entrar-js .content::before {
@@ -230,6 +238,13 @@ body {
     border-bottom-left-radius: 0px;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
+    animation: entrar 3s;
+    z-index: 13;
+}
+
+.nova-conta-js .content::before {
+    animation: nvConta 3s;
+    z-index: 13;
 }
 
 .nova-conta-js .second-content .first-column,
@@ -237,7 +252,130 @@ body {
     z-index: -1;
 }
 
-.nova-conta-js .first-content .first-column,
 .nova-conta-js .first-content .second-column {
     z-index: 12;
+}
+
+.nova-conta-js .first-content .first-column {
+    z-index: 14;
+}
+
+/* deslocamento */
+
+.entrar-js .first-content .second-column {
+    z-index: -1;
+    position: relative;
+    animation: cadastro 3s;
+}
+
+.nova-conta-js .second-content .second-column {
+    z-index: -1;
+    position: relative;
+    animation: login 3s;
+}
+
+/* animação tela branca */
+
+@keyframes cadastro {
+    from {
+        left: 0;
+        opacity: 1;
+        z-index: 14;
+    }
+
+    25% {
+        left: -80px;
+        opacity: 0.5;
+    }
+
+    50% {
+        left: -100px;
+        opacity: 0.2;
+    }
+
+    to {
+        left: -110px;
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+@keyframes login {
+    from {
+        left: 0;
+        opacity: 1;
+        z-index: 14;
+    }
+
+    25% {
+        left: 80px;
+        opacity: 0.5;
+    }
+
+    50% {
+        left: 100px;
+        opacity: 0.2;
+    }
+
+    to {
+        left: 110px;
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+/* animação tela verde */
+
+@keyframes entrar {
+    from {
+        left: 0;
+        width: 40%;
+    }
+
+    25% {
+        left: 5%;
+        width: 50%;
+    }
+
+    50% {
+        left: 25%;
+        width: 60%;
+    }
+
+    75% {
+        left: 45%;
+        width: 50%;
+    }
+
+    to {
+        left: 60%;
+        width: 40%;
+    }
+}
+
+@keyframes nvConta {
+    from {
+        left: 60%;
+        width: 40%;
+    }
+
+    25% {
+        left: 45%;
+        width: 50%;
+    }
+
+    50% {
+        left: 25%;
+        width: 60%;
+    }
+
+    75% {
+        left: 5%;
+        width: 50%;
+    }
+
+    to {
+        left: 0%;
+        width: 40%;
+    }
 }
